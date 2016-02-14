@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import API_KEY from './api';
+import API_KEY from './components/api';
+
+import Searchbar from './components/search_bar';
 
 
 
@@ -8,7 +10,11 @@ import API_KEY from './api';
   //make some HTML
 
 const App = () =>  {
-  return <div>Hi!</div>
+  return (
+    <div>
+     <Searchbar />
+    </div>
+  )
 }
 
 //take the gerneated HTML and put it on the page
