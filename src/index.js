@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import API_KEY from './api';
+
+
+
 //Create a new Copemnet 
   //make some HTML
 
