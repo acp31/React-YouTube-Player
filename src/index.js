@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import API_KEY from './components/api';
 
 import Searchbar from './components/search_bar';
 
