@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import YTSeatch from 'youtube-api-search';
 import Searchbar from './components/search_bar';
+import VideoList from './components/video_list';
+const API_KEY = ''; //enter your Youtube API Key
 
 
 
-//Create a new Copemnet 
-  //make some HTML
 
-const App = () =>  {
-  return (
-    <div>
-     <Searchbar />
-    </div>
-  )
+class App extends Component{
+ constructor(props){
+  super(props);
+
+  this.state = { videos: [] };
+
+  YTSeatch({key: API_KEY, term: 'surfboards'}, (videos) => {
+    this.setState({ videos });
+  });
+ }
+
+  render() {
+    return (
+      <div>
+       <Searchbar />
+       <VideoList videos={this.state.videos} />
+      </div>
+    );
+  }
 }
-
-//take the gerneated HTML and put it on the page
-  //(in the DOM)
 
 ReactDOM.render(<App />, document.querySelector('.container'));
